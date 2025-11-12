@@ -1,0 +1,123 @@
+{
+  "url": "https://www.vitamix.com",
+  "brand_profile": {
+    "tone_attributes": {
+      "primary": [
+        "authentic",
+        "empowering",
+        "innovative",
+        "sustainability-focused",
+        "inclusive"
+      ],
+      "avoid": [
+        "corporate jargon",
+        "gatekeeping language",
+        "greenwashing",
+        "overly formal"
+      ]
+    },
+    "language_patterns": {
+      "preferred": [
+        "Gen Z slang (no cap, vibes, era, main character energy)",
+        "Direct and transparent",
+        "Value-driven storytelling",
+        "Conversational and relatable"
+      ],
+      "avoid": [
+        "Marketing buzzwords",
+        "Excessive technical jargon",
+        "Condescending tone"
+      ]
+    },
+    "communication_style": "Authentic, transparent, and empowering. Speaks to Gen Z values (sustainability, inclusivity, innovation) without performative activism. Uses contemporary slang naturally, not forced.",
+    "target_audience": "Generation Z (18-26 years old), health-conscious, sustainability-minded, values authenticity and transparency",
+    "formality_level": {
+      "score": 0.3,
+      "label": "casual-conversational",
+      "description": "Very casual and conversational, like talking to a friend who knows their stuff"
+    },
+    "vocabulary": {
+      "score": 0.7,
+      "label": "accessible-modern",
+      "word_complexity": "Simple but not dumbed down",
+      "signature_phrases": [
+        "no cap",
+        "main character energy",
+        "the vibe",
+        "era",
+        "real talk",
+        "that's the move",
+        "actually fire",
+        "flex"
+      ],
+      "industry_terms_usage": "Explained simply, not assumed knowledge"
+    },
+    "emotional_tone": {
+      "score": 0.8,
+      "label": "enthusiastic-empowering",
+      "description": "Energetic and positive while being honest about challenges"
+    },
+    "use_of_humor": {
+      "score": 0.6,
+      "label": "witty-relatable",
+      "examples": [
+        "Plot twist",
+        "Science is wild",
+        "idk what to do with this"
+      ]
+    },
+    "brand_personality": {
+      "archetype": "friend-innovator",
+      "description": "The friend who's genuinely excited to share something that changed their life",
+      "traits": [
+        "authentic",
+        "knowledgeable but not gatekeeping",
+        "sustainability champion",
+        "innovation enthusiast"
+      ]
+    },
+    "brand_values": {
+      "core_values": [
+        {
+          "name": "Sustainability",
+          "score": 0.95,
+          "evidence": "Zero-waste cooking, built to last decades, whole-food nutrition"
+        },
+        {
+          "name": "Accessibility",
+          "score": 0.9,
+          "evidence": "Professional tools for everyone, zero gatekeeping, innovation shouldn't be exclusive"
+        },
+        {
+          "name": "Quality",
+          "score": 0.95,
+          "evidence": "100+ years innovation, lasts 10x longer, professional-grade"
+        },
+        {
+          "name": "Empowerment",
+          "score": 0.9,
+          "evidence": "Control your ingredients, make your own choices, DIY everything era"
+        }
+      ]
+    },
+    "editorial_guidelines": {
+      "dos": [
+        "Use Gen Z slang naturally",
+        "Be transparent about product benefits",
+        "Highlight sustainability genuinely",
+        "Empower user choice",
+        "Keep it real and honest"
+      ],
+      "donts": [
+        "Force slang or sound like a brand trying too hard",
+        "Make empty sustainability claims",
+        "Talk down to the audience",
+        "Use corporate marketing speak"
+      ]
+    },
+    "sample_size": 180,
+    "confidence_score": 0.89
+  },
+  "brief": "Create a compelling hero section for a Gen Z-targeted Vitamix landing page. Focus on sustainable living, innovation, and whole-food nutrition. The headline should capture 'main character energy' and position Vitamix as essential kitchen tech for the zero-waste era. Include a punchy tagline and 2-3 sentences of body copy that speak to Gen Z values without being preachy.",
+  "detail_level": "detailed"
+}

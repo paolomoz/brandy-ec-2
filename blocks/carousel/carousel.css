@@ -1,5 +1,17 @@
+/* Carousel Block - Spectrum Design System
+ * Slide carousel following Spectrum navigation patterns
+ * Features Spectrum-styled indicators and navigation buttons
+ */
+
+.carousel {
+  margin: var(--spectrum-spacing-size-500) 0;
+}
+
 .carousel .carousel-slides-container {
   position: relative;
+  border-radius: var(--spectrum-corner-radius-large);
+  overflow: hidden;
+  box-shadow: var(--spectrum-drop-shadow-level-2);
 }
 
 .carousel .carousel-slides,
@@ -20,6 +32,7 @@
   display: none;
 }
 
+/* Individual Slide */
 .carousel .carousel-slide {
   flex: 0 0 100%;
   scroll-snap-align: start;
@@ -29,7 +42,8 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  min-height: min(50vw, calc(100dvh - var(--header-height)));
+  min-height: min(60vw, 500px);
+  background-color: var(--spectrum-gray-900);
 }
 
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
@@ -40,6 +54,7 @@
   align-items: flex-end;
 }
 
+/* Slide Image */
 .carousel .carousel-slide .carousel-slide-image picture {
   position: absolute;
   inset: 0;
@@ -51,79 +66,122 @@
   object-fit: cover;
 }
 
+/* Slide Content - Spectrum glass-morphism style */
 .carousel .carousel-slide .carousel-slide-content {
   z-index: 1;
-  margin: 68px;
-  padding: 16px;
-  color: white;
-  background-color: rgba(19 19 19 / 75%);
+  margin: var(--spectrum-spacing-size-500);
+  padding: var(--spectrum-spacing-size-400);
+  color: var(--spectrum-neutral-content-color-inverse);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--spectrum-corner-radius-medium);
   position: relative;
   width: var(--slide-content-width, auto);
+  box-shadow: var(--spectrum-drop-shadow-level-3);
 }
 
+.carousel .carousel-slide .carousel-slide-content h2,
+.carousel .carousel-slide .carousel-slide-content h3 {
+  color: var(--spectrum-neutral-content-color-inverse);
+  font-weight: var(--spectrum-font-weight-black);
+  margin-top: 0;
+}
+
+.carousel .carousel-slide .carousel-slide-content p {
+  color: var(--spectrum-neutral-content-color-inverse);
+  line-height: var(--spectrum-line-height-body);
+}
+
+/* Slide Indicators - Spectrum dot pattern */
 .carousel .carousel-slide-indicators {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px 12px;
-  padding: 12px;
-  background-color: var(--light-color);
+  gap: var(--spectrum-spacing-size-100) var(--spectrum-spacing-size-200);
+  padding: var(--spectrum-spacing-size-300);
+  background-color: var(--spectrum-neutral-background-color-subdued);
   line-height: 0;
 }
 
 .carousel .carousel-slide-indicator button {
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   margin: 0;
   padding: 0;
-  border-radius: 50%;
-  background-color: #dadada;
-  transition: background-color 0.2s;
+  border: 2px solid var(--spectrum-gray-500);
+  border-radius: var(--spectrum-corner-radius-full);
+  background-color: transparent;
+  transition: all var(--spectrum-animation-duration-100) var(--spectrum-animation-ease-out);
+  cursor: pointer;
+}
+
+.carousel .carousel-slide-indicator button:hover {
+  border-color: var(--spectrum-accent-color-700);
+  transform: scale(1.2);
 }
 
 .carousel .carousel-slide-indicator button:disabled,
-.carousel .carousel-slide-indicator button:hover,
 .carousel .carousel-slide-indicator button:focus-visible {
-  background-color: var(--text-color);
+  background-color: var(--spectrum-accent-color-700);
+  border-color: var(--spectrum-accent-color-700);
 }
 
+.carousel .carousel-slide-indicator button:focus-visible {
+  outline: var(--spectrum-focus-indicator-thickness) solid var(--spectrum-focus-indicator-color);
+  outline-offset: var(--spectrum-focus-indicator-gap);
+}
+
+/* Navigation Buttons - Spectrum action button style */
 .carousel .carousel-navigation-buttons {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 12px;
-  right: 12px;
+  left: var(--spectrum-spacing-size-200);
+  right: var(--spectrum-spacing-size-200);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .carousel .carousel-navigation-buttons button {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   margin: 0;
-  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--spectrum-corner-radius-full);
   padding: 0;
-  background-color: rgba(19 19 19 / 25%);
-  transition: background-color 0.2s;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--spectrum-drop-shadow-level-2);
+  transition: all var(--spectrum-animation-duration-200) var(--spectrum-animation-ease-out);
+  pointer-events: auto;
+  cursor: pointer;
 }
 
-.carousel .carousel-navigation-buttons button:hover,
+.carousel .carousel-navigation-buttons button:hover {
+  background-color: var(--spectrum-accent-color-700);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--spectrum-drop-shadow-level-3);
+  transform: scale(1.1);
+}
+
 .carousel .carousel-navigation-buttons button:focus-visible {
-  background-color: rgba(19 19 19 / 75%);
+  outline: var(--spectrum-focus-indicator-thickness) solid var(--spectrum-focus-indicator-color);
+  outline-offset: var(--spectrum-focus-indicator-gap);
 }
 
 .carousel .carousel-navigation-buttons button::after {
   display: block;
   content: '';
-  border: 2px solid;
+  border: 3px solid #fff;
   border-bottom: 0;
   border-left: 0;
-  height: 12px;
-  width: 12px;
+  height: 14px;
+  width: 14px;
   position: absolute;
   top: 50%;
   left: calc(50% + 2px);
@@ -135,19 +193,34 @@
   left: calc(50% - 2px);
 }
 
+/* Responsive adjustments */
 @media (width >= 600px) {
   .carousel .carousel-navigation-buttons {
-    left: 24px;
-    right: 24px;
+    left: var(--spectrum-spacing-size-400);
+    right: var(--spectrum-spacing-size-400);
+  }
+
+  .carousel .carousel-slide {
+    min-height: 600px;
   }
 
   .carousel .carousel-slide .carousel-slide-content {
     --slide-content-width: calc((100% - 184px) / 2);
-
-    margin: 92px;
+    margin: var(--spectrum-spacing-size-800);
+    padding: var(--spectrum-spacing-size-500);
   }
 
   .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
     --slide-content-width: auto;
+  }
+
+  .carousel .carousel-navigation-buttons button {
+    width: 64px;
+    height: 64px;
+  }
+
+  .carousel .carousel-navigation-buttons button::after {
+    height: 16px;
+    width: 16px;
   }
 }

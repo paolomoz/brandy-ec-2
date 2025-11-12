@@ -1,0 +1,297 @@
+/*
+ * Adobe Spectrum Design Tokens
+ * Spectrum 2 Design System Implementation
+ * Based on: https://opensource.adobe.com/spectrum-tokens/
+ */
+
+:root {
+  /* ============================
+     SPECTRUM SPACING TOKENS
+     ============================ */
+  --spectrum-spacing-size-0: 0;
+  --spectrum-spacing-size-50: 4px;
+  --spectrum-spacing-size-75: 6px;
+  --spectrum-spacing-size-100: 8px;
+  --spectrum-spacing-size-125: 10px;
+  --spectrum-spacing-size-130: 10px;
+  --spectrum-spacing-size-150: 12px;
+  --spectrum-spacing-size-160: 13px;
+  --spectrum-spacing-size-175: 14px;
+  --spectrum-spacing-size-185: 15px;
+  --spectrum-spacing-size-200: 16px;
+  --spectrum-spacing-size-225: 18px;
+  --spectrum-spacing-size-250: 20px;
+  --spectrum-spacing-size-275: 22px;
+  --spectrum-spacing-size-300: 24px;
+  --spectrum-spacing-size-350: 28px;
+  --spectrum-spacing-size-400: 32px;
+  --spectrum-spacing-size-450: 36px;
+  --spectrum-spacing-size-500: 40px;
+  --spectrum-spacing-size-550: 44px;
+  --spectrum-spacing-size-600: 48px;
+  --spectrum-spacing-size-675: 54px;
+  --spectrum-spacing-size-700: 56px;
+  --spectrum-spacing-size-800: 64px;
+  --spectrum-spacing-size-900: 72px;
+  --spectrum-spacing-size-1000: 80px;
+
+  /* ============================
+     SPECTRUM COLOR TOKENS - LIGHT MODE
+     ============================ */
+
+  /* Neutral Colors */
+  --spectrum-neutral-background-color-default: #ffffff;
+  --spectrum-neutral-background-color-subdued: #f8f8f8;
+  --spectrum-neutral-background-color-hover: #f5f5f5;
+  --spectrum-neutral-background-color-down: #ececec;
+  --spectrum-neutral-background-color-selected: #e3e3e3;
+
+  --spectrum-neutral-content-color-default: #2c2c2c;
+  --spectrum-neutral-content-color-subdued: #6e6e6e;
+  --spectrum-neutral-content-color-hover: #1a1a1a;
+  --spectrum-neutral-content-color-down: #0d0d0d;
+  --spectrum-neutral-content-color-inverse: #ffffff;
+
+  /* Accent Colors (Adobe Express Blue) */
+  --spectrum-accent-color-100: #e6f0ff;
+  --spectrum-accent-color-200: #c3ddff;
+  --spectrum-accent-color-300: #9dcaff;
+  --spectrum-accent-color-400: #74b7ff;
+  --spectrum-accent-color-500: #4aa4ff;
+  --spectrum-accent-color-600: #2191ff;
+  --spectrum-accent-color-700: #007fff;
+  --spectrum-accent-color-800: #006fd6;
+  --spectrum-accent-color-900: #0060ad;
+  --spectrum-accent-color-1000: #005185;
+  --spectrum-accent-color-1100: #00425c;
+
+  --spectrum-accent-background-color-default: var(--spectrum-accent-color-700);
+  --spectrum-accent-background-color-hover: var(--spectrum-accent-color-800);
+  --spectrum-accent-background-color-down: var(--spectrum-accent-color-900);
+
+  --spectrum-accent-content-color-default: #ffffff;
+
+  /* Semantic Colors */
+  --spectrum-positive-color-100: #e6f7ed;
+  --spectrum-positive-color-700: #00875a;
+  --spectrum-positive-color-900: #006644;
+  --spectrum-positive-background-color-default: var(--spectrum-positive-color-700);
+
+  --spectrum-negative-color-100: #ffebe9;
+  --spectrum-negative-color-700: #de3618;
+  --spectrum-negative-color-900: #b52f14;
+  --spectrum-negative-background-color-default: var(--spectrum-negative-color-700);
+
+  --spectrum-informative-color-100: #e6f4ff;
+  --spectrum-informative-color-700: #0078d4;
+  --spectrum-informative-color-900: #005a9e;
+  --spectrum-informative-background-color-default: var(--spectrum-informative-color-700);
+
+  --spectrum-notice-color-100: #fff5e6;
+  --spectrum-notice-color-700: #e68619;
+  --spectrum-notice-color-900: #b86e15;
+  --spectrum-notice-background-color-default: var(--spectrum-notice-color-700);
+
+  /* Gray Scale */
+  --spectrum-gray-50: #ffffff;
+  --spectrum-gray-75: #fafafa;
+  --spectrum-gray-100: #f5f5f5;
+  --spectrum-gray-200: #ececec;
+  --spectrum-gray-300: #e3e3e3;
+  --spectrum-gray-400: #d0d0d0;
+  --spectrum-gray-500: #b9b9b9;
+  --spectrum-gray-600: #8e8e8e;
+  --spectrum-gray-700: #6e6e6e;
+  --spectrum-gray-800: #4b4b4b;
+  --spectrum-gray-900: #2c2c2c;
+
+  /* Border Colors */
+  --spectrum-border-color-default: var(--spectrum-gray-300);
+  --spectrum-border-color-hover: var(--spectrum-gray-400);
+  --spectrum-border-color-focus: var(--spectrum-accent-color-700);
+
+  /* ============================
+     SPECTRUM TYPOGRAPHY TOKENS
+     ============================ */
+
+  /* Font Family */
+  --spectrum-sans-font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --spectrum-serif-font-family: adobe-clean-serif, "Source Serif Pro", Georgia, serif;
+  --spectrum-code-font-family: "Source Code Pro", Monaco, monospace;
+
+  /* Font Weights */
+  --spectrum-font-weight-light: 300;
+  --spectrum-font-weight-regular: 400;
+  --spectrum-font-weight-medium: 500;
+  --spectrum-font-weight-bold: 700;
+  --spectrum-font-weight-extra-bold: 800;
+  --spectrum-font-weight-black: 900;
+
+  /* Heading Sizes */
+  --spectrum-heading-size-xxxl: 45px;
+  --spectrum-heading-size-xxl: 36px;
+  --spectrum-heading-size-xl: 28px;
+  --spectrum-heading-size-l: 22px;
+  --spectrum-heading-size-m: 18px;
+  --spectrum-heading-size-s: 16px;
+  --spectrum-heading-size-xs: 14px;
+  --spectrum-heading-size-xxs: 12px;
+
+  /* Body Sizes */
+  --spectrum-body-size-xxxl: 25px;
+  --spectrum-body-size-xxl: 22px;
+  --spectrum-body-size-xl: 20px;
+  --spectrum-body-size-l: 18px;
+  --spectrum-body-size-m: 16px;
+  --spectrum-body-size-s: 14px;
+  --spectrum-body-size-xs: 12px;
+
+  /* Detail Sizes (labels, captions) */
+  --spectrum-detail-size-l: 14px;
+  --spectrum-detail-size-m: 12px;
+  --spectrum-detail-size-s: 11px;
+
+  /* Line Heights */
+  --spectrum-line-height-heading: 1.3;
+  --spectrum-line-height-body: 1.5;
+  --spectrum-line-height-detail: 1.4;
+
+  /* ============================
+     SPECTRUM LAYOUT TOKENS
+     ============================ */
+
+  /* Corner Radius */
+  --spectrum-corner-radius-none: 0;
+  --spectrum-corner-radius-small: 4px;
+  --spectrum-corner-radius-medium: 8px;
+  --spectrum-corner-radius-large: 16px;
+  --spectrum-corner-radius-full: 9999px;
+
+  /* Drop Shadows */
+  --spectrum-drop-shadow-level-1: 0 1px 4px rgba(0, 0, 0, 0.15);
+  --spectrum-drop-shadow-level-2: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --spectrum-drop-shadow-level-3: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --spectrum-drop-shadow-level-4: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* Focus Indicator */
+  --spectrum-focus-indicator-color: var(--spectrum-accent-color-700);
+  --spectrum-focus-indicator-thickness: 2px;
+  --spectrum-focus-indicator-gap: 2px;
+
+  /* ============================
+     SPECTRUM ANIMATION TOKENS
+     ============================ */
+
+  /* Durations */
+  --spectrum-animation-duration-100: 130ms;
+  --spectrum-animation-duration-200: 160ms;
+  --spectrum-animation-duration-300: 190ms;
+  --spectrum-animation-duration-400: 220ms;
+  --spectrum-animation-duration-500: 250ms;
+  --spectrum-animation-duration-600: 300ms;
+  --spectrum-animation-duration-700: 350ms;
+  --spectrum-animation-duration-800: 400ms;
+  --spectrum-animation-duration-900: 450ms;
+  --spectrum-animation-duration-1000: 500ms;
+  --spectrum-animation-duration-2000: 1000ms;
+  --spectrum-animation-duration-4000: 2000ms;
+
+  /* Easing */
+  --spectrum-animation-ease-in: cubic-bezier(0.5, 0, 1, 1);
+  --spectrum-animation-ease-out: cubic-bezier(0, 0, 0.4, 1);
+  --spectrum-animation-ease-in-out: cubic-bezier(0.45, 0, 0.4, 1);
+  --spectrum-animation-ease-linear: cubic-bezier(0, 0, 1, 1);
+}
+
+/* ============================
+   DARK MODE TOKENS
+   ============================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Neutral Colors - Dark Mode */
+    --spectrum-neutral-background-color-default: #1e1e1e;
+    --spectrum-neutral-background-color-subdued: #2a2a2a;
+    --spectrum-neutral-background-color-hover: #323232;
+    --spectrum-neutral-background-color-down: #3a3a3a;
+    --spectrum-neutral-background-color-selected: #424242;
+
+    --spectrum-neutral-content-color-default: #ebebeb;
+    --spectrum-neutral-content-color-subdued: #a0a0a0;
+    --spectrum-neutral-content-color-hover: #f5f5f5;
+    --spectrum-neutral-content-color-down: #ffffff;
+    --spectrum-neutral-content-color-inverse: #1e1e1e;
+
+    /* Accent Colors - Dark Mode (slightly adjusted) */
+    --spectrum-accent-background-color-default: var(--spectrum-accent-color-600);
+    --spectrum-accent-background-color-hover: var(--spectrum-accent-color-700);
+    --spectrum-accent-background-color-down: var(--spectrum-accent-color-800);
+
+    /* Gray Scale - Dark Mode */
+    --spectrum-gray-50: #1e1e1e;
+    --spectrum-gray-75: #252525;
+    --spectrum-gray-100: #2a2a2a;
+    --spectrum-gray-200: #323232;
+    --spectrum-gray-300: #3a3a3a;
+    --spectrum-gray-400: #4a4a4a;
+    --spectrum-gray-500: #5a5a5a;
+    --spectrum-gray-600: #7a7a7a;
+    --spectrum-gray-700: #a0a0a0;
+    --spectrum-gray-800: #c8c8c8;
+    --spectrum-gray-900: #ebebeb;
+
+    /* Border Colors - Dark Mode */
+    --spectrum-border-color-default: var(--spectrum-gray-300);
+    --spectrum-border-color-hover: var(--spectrum-gray-400);
+
+    /* Drop Shadows - Dark Mode */
+    --spectrum-drop-shadow-level-1: 0 1px 4px rgba(0, 0, 0, 0.5);
+    --spectrum-drop-shadow-level-2: 0 2px 8px rgba(0, 0, 0, 0.5);
+    --spectrum-drop-shadow-level-3: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --spectrum-drop-shadow-level-4: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ============================
+   EXPLICIT DARK MODE CLASS
+   ============================ */
+
+[data-theme="dark"],
+.spectrum-theme-dark {
+  /* Same dark mode tokens as media query */
+  --spectrum-neutral-background-color-default: #1e1e1e;
+  --spectrum-neutral-background-color-subdued: #2a2a2a;
+  --spectrum-neutral-background-color-hover: #323232;
+  --spectrum-neutral-background-color-down: #3a3a3a;
+  --spectrum-neutral-background-color-selected: #424242;
+
+  --spectrum-neutral-content-color-default: #ebebeb;
+  --spectrum-neutral-content-color-subdued: #a0a0a0;
+  --spectrum-neutral-content-color-hover: #f5f5f5;
+  --spectrum-neutral-content-color-down: #ffffff;
+  --spectrum-neutral-content-color-inverse: #1e1e1e;
+
+  --spectrum-accent-background-color-default: var(--spectrum-accent-color-600);
+  --spectrum-accent-background-color-hover: var(--spectrum-accent-color-700);
+  --spectrum-accent-background-color-down: var(--spectrum-accent-color-800);
+
+  --spectrum-gray-50: #1e1e1e;
+  --spectrum-gray-75: #252525;
+  --spectrum-gray-100: #2a2a2a;
+  --spectrum-gray-200: #323232;
+  --spectrum-gray-300: #3a3a3a;
+  --spectrum-gray-400: #4a4a4a;
+  --spectrum-gray-500: #5a5a5a;
+  --spectrum-gray-600: #7a7a7a;
+  --spectrum-gray-700: #a0a0a0;
+  --spectrum-gray-800: #c8c8c8;
+  --spectrum-gray-900: #ebebeb;
+
+  --spectrum-border-color-default: var(--spectrum-gray-300);
+  --spectrum-border-color-hover: var(--spectrum-gray-400);
+
+  --spectrum-drop-shadow-level-1: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --spectrum-drop-shadow-level-2: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --spectrum-drop-shadow-level-3: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --spectrum-drop-shadow-level-4: 0 8px 24px rgba(0, 0, 0, 0.5);
+}

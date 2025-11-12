@@ -1,12 +1,21 @@
+/* Video Block - Spectrum Design System
+ * Media player following Spectrum media patterns
+ * Supports YouTube, Vimeo, and native video
+ */
+
 .video {
   text-align: center;
-  max-width: 900px;
-  margin: 24px auto;
+  max-width: 1000px;
+  margin: var(--spectrum-spacing-size-500) auto;
+  border-radius: var(--spectrum-corner-radius-medium);
+  overflow: hidden;
+  box-shadow: var(--spectrum-drop-shadow-level-2);
 }
 
 .video[data-embed-loaded='false']:not(.placeholder) {
   /* reserve an approximate space to avoid extensive layout shifts */
   aspect-ratio: 16 / 9;
+  background-color: var(--spectrum-gray-900);
 }
 
 .video > div {
@@ -16,12 +25,21 @@
 
 .video video {
   max-width: 100%;
+  display: block;
 }
 
+/* Video placeholder with thumbnail */
 .video .video-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
   position: relative;
+  cursor: pointer;
+  background-color: var(--spectrum-gray-900);
+  transition: transform var(--spectrum-animation-duration-200) var(--spectrum-animation-ease-out);
+}
+
+.video .video-placeholder:hover {
+  transform: scale(1.01);
 }
 
 .video .video-placeholder > * {
@@ -43,16 +61,38 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter var(--spectrum-animation-duration-200) var(--spectrum-animation-ease-out);
 }
 
+.video .video-placeholder:hover picture img {
+  filter: brightness(1);
+}
+
+/* Play button - Spectrum action button style */
 .video .video-placeholder-play button {
   position: relative;
   display: block;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  outline: 2px solid;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--spectrum-corner-radius-full);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  background: var(--spectrum-accent-color-700);
+  box-shadow: var(--spectrum-drop-shadow-level-3);
   padding: 0;
+  cursor: pointer;
+  transition: all var(--spectrum-animation-duration-200) var(--spectrum-animation-ease-out);
+}
+
+.video .video-placeholder-play button:hover {
+  background: var(--spectrum-accent-color-800);
+  transform: scale(1.1);
+  box-shadow: var(--spectrum-drop-shadow-level-4);
+}
+
+.video .video-placeholder-play button:focus-visible {
+  outline: var(--spectrum-focus-indicator-thickness) solid var(--spectrum-focus-indicator-color);
+  outline-offset: var(--spectrum-focus-indicator-gap);
 }
 
 .video .video-placeholder-play button::before {
@@ -61,11 +101,26 @@
   box-sizing: border-box;
   position: absolute;
   width: 0;
-  height: 24px;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-left: 18px solid;
+  height: 32px;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 26px solid #fff;
   top: 50%;
-  left: calc(50% + 2px);
+  left: 55%;
   transform: translate(-50%, -50%);
+}
+
+/* Responsive adjustments */
+@media (width >= 600px) {
+  .video .video-placeholder-play button {
+    width: 100px;
+    height: 100px;
+  }
+
+  .video .video-placeholder-play button::before {
+    height: 40px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 32px solid #fff;
+  }
 }

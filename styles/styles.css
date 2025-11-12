@@ -10,34 +10,37 @@
  * governing permissions and limitations under the License.
  */
 
+/* Import Spectrum Design Tokens */
+@import url('spectrum-tokens.css');
+
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* Spectrum-aligned color mappings */
+  --background-color: var(--spectrum-neutral-background-color-default);
+  --light-color: var(--spectrum-neutral-background-color-subdued);
+  --dark-color: var(--spectrum-gray-700);
+  --text-color: var(--spectrum-neutral-content-color-default);
+  --link-color: var(--spectrum-accent-color-700);
+  --link-hover-color: var(--spectrum-accent-color-800);
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* Spectrum typography mappings */
+  --body-font-family: var(--spectrum-sans-font-family);
+  --heading-font-family: var(--spectrum-sans-font-family);
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* Body sizes (mobile-first, using Spectrum tokens) */
+  --body-font-size-m: var(--spectrum-body-size-xxl);
+  --body-font-size-s: var(--spectrum-body-size-xl);
+  --body-font-size-xs: var(--spectrum-body-size-l);
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* Heading sizes (mobile-first, using Spectrum tokens) */
+  --heading-font-size-xxl: var(--spectrum-heading-size-xxxl);
+  --heading-font-size-xl: var(--spectrum-heading-size-xxl);
+  --heading-font-size-l: var(--spectrum-heading-size-xl);
+  --heading-font-size-m: var(--spectrum-heading-size-l);
+  --heading-font-size-s: var(--spectrum-heading-size-m);
+  --heading-font-size-xs: var(--spectrum-heading-size-s);
 
-  /* nav height */
-  --nav-height: 64px;
+  /* Nav height */
+  --nav-height: var(--spectrum-spacing-size-800);
 }
 
 /* fallback fonts */
@@ -143,7 +146,7 @@ pre {
 }
 
 main > div {
-  margin: 40px 16px;
+  margin: var(--spectrum-spacing-size-500) var(--spectrum-spacing-size-200);
 }
 
 input,
@@ -165,49 +168,79 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
+/* buttons - Spectrum Design System */
 a.button:any-link,
 button {
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spectrum-spacing-size-100);
   max-width: 100%;
-  margin: 12px 0;
+  margin: var(--spectrum-spacing-size-150) 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: var(--spectrum-corner-radius-full);
+  padding: var(--spectrum-spacing-size-100) var(--spectrum-spacing-size-300);
+  min-height: var(--spectrum-spacing-size-400);
   font-family: var(--body-font-family);
+  font-size: var(--spectrum-body-size-m);
   font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
+  font-weight: var(--spectrum-font-weight-bold);
+  line-height: var(--spectrum-line-height-body);
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--spectrum-accent-background-color-default);
+  color: var(--spectrum-accent-content-color-default);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: background-color var(--spectrum-animation-duration-100) var(--spectrum-animation-ease-out);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--spectrum-accent-background-color-hover);
   cursor: pointer;
+}
+
+a.button:active,
+button:active {
+  background-color: var(--spectrum-accent-background-color-down);
+}
+
+a.button:focus-visible,
+button:focus-visible {
+  outline: var(--spectrum-focus-indicator-thickness) solid var(--spectrum-focus-indicator-color);
+  outline-offset: var(--spectrum-focus-indicator-gap);
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+  background-color: var(--spectrum-gray-300);
+  color: var(--spectrum-gray-600);
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: var(--spectrum-neutral-background-color-default);
+  border: 2px solid var(--spectrum-border-color-default);
+  color: var(--spectrum-neutral-content-color-default);
+}
+
+a.button.secondary:hover,
+button.secondary:hover {
+  background-color: var(--spectrum-neutral-background-color-hover);
+  border-color: var(--spectrum-border-color-hover);
+}
+
+a.button.secondary:active,
+button.secondary:active {
+  background-color: var(--spectrum-neutral-background-color-down);
 }
 
 main img {
@@ -227,15 +260,15 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* sections - Spectrum spacing */
 main > .section {
-  margin: 40px 0;
+  margin: var(--spectrum-spacing-size-500) 0;
 }
 
 main > .section > div {
   max-width: 1200px;
   margin: auto;
-  padding: 0 24px;
+  padding: 0 var(--spectrum-spacing-size-300);
 }
 
 main > .section:first-of-type {
@@ -244,7 +277,7 @@ main > .section:first-of-type {
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0 var(--spectrum-spacing-size-400);
   }
 }
 
@@ -253,5 +286,5 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
-  padding: 40px 0;
+  padding: var(--spectrum-spacing-size-500) 0;
 }

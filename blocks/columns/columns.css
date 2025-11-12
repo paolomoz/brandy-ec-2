@@ -1,33 +1,93 @@
+/* Columns Block - Spectrum Design System
+ * Responsive grid layout following Spectrum spacing and grid patterns
+ * Supports 2, 3, and 4 column layouts
+ */
+
+.columns {
+  margin: var(--spectrum-spacing-size-500) 0;
+}
+
 .columns > div {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spectrum-spacing-size-400);
+  align-items: start;
+}
+
+/* Column content styling */
+.columns > div > div {
+  padding: var(--spectrum-spacing-size-300);
+}
+
+.columns h2,
+.columns h3,
+.columns h4 {
+  margin-top: 0;
+  color: var(--spectrum-neutral-content-color-default);
+  font-weight: var(--spectrum-font-weight-bold);
+}
+
+.columns p,
+.columns strong {
+  color: var(--spectrum-neutral-content-color-default);
+  line-height: var(--spectrum-line-height-body);
 }
 
 .columns img {
   width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
+  height: auto;
+  border-radius: var(--spectrum-corner-radius-small);
 }
 
 .columns > div > .columns-img-col {
-  order: 0;
+  padding: 0;
 }
 
 .columns > div > .columns-img-col img {
   display: block;
 }
 
+/* Tablet: 2 columns */
+@media (width >= 600px) {
+  .columns > div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spectrum-spacing-size-400);
+  }
+}
+
+/* Desktop: auto-fit columns based on content */
 @media (width >= 900px) {
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spectrum-spacing-size-500);
   }
 
   .columns > div > div {
-    flex: 1;
-    order: unset;
+    padding: var(--spectrum-spacing-size-400);
+  }
+}
+
+/* Support for explicit 3 or 4 column layouts */
+.columns.columns-3 > div {
+  grid-template-columns: 1fr;
+}
+
+.columns.columns-4 > div {
+  grid-template-columns: 1fr;
+}
+
+@media (width >= 900px) {
+  .columns.columns-3 > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .columns.columns-4 > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 1200px) {
+  .columns.columns-4 > div {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

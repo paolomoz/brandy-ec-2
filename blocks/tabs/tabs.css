@@ -1,58 +1,162 @@
+/* Tabs Block - Spectrum Design System
+ * Tab navigation following Spectrum Tabs component patterns
+ * https://spectrum.adobe.com/page/tabs/
+ */
+
+.tabs {
+  margin: var(--spectrum-spacing-size-500) 0;
+}
+
+/* Tab List - Spectrum horizontal tabs */
 .tabs .tabs-list {
   display: flex;
-  gap: 0.5ch;
+  gap: 0;
   max-width: 100%;
-  font-size: var(--body-font-size-xs);
+  font-size: var(--spectrum-body-size-s);
   overflow-x: auto;
+  border-bottom: 2px solid var(--spectrum-gray-300);
+  margin-bottom: var(--spectrum-spacing-size-300);
+  scrollbar-width: thin;
 }
 
-@media (width >= 600px) {
-  .tabs .tabs-list {
-    font-size: var(--body-font-size-s);
-  }
+.tabs .tabs-list::-webkit-scrollbar {
+  height: 6px;
 }
 
-@media (width >= 900px) {
-  .tabs .tabs-list {
-    font-size: var(--body-font-size-m);
-  }
+.tabs .tabs-list::-webkit-scrollbar-thumb {
+  background-color: var(--spectrum-gray-400);
+  border-radius: var(--spectrum-corner-radius-small);
 }
 
+/* Tab Item - Spectrum Tab button */
 .tabs .tabs-list button {
-  flex: 0 0 max-content;
+  flex: 0 0 auto;
   margin: 0;
-  border: 1px solid #dadada;
+  border: none;
+  border-bottom: 3px solid transparent;
   border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
-  text-overflow: unset;
-  overflow: unset;
-  white-space: unset;
-  transition: background-color 0.2s;
+  padding: var(--spectrum-spacing-size-150) var(--spectrum-spacing-size-300);
+  background-color: transparent;
+  color: var(--spectrum-neutral-content-color-subdued);
+  font-size: var(--spectrum-body-size-m);
+  font-weight: var(--spectrum-font-weight-bold);
+  line-height: var(--spectrum-line-height-body);
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--spectrum-animation-duration-100) var(--spectrum-animation-ease-out);
+  position: relative;
+  margin-bottom: -2px;
 }
 
 .tabs .tabs-list button p {
   margin: 0;
 }
 
-
-.tabs .tabs-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
+.tabs .tabs-list button:hover {
+  background-color: var(--spectrum-neutral-background-color-hover);
+  color: var(--spectrum-neutral-content-color-default);
 }
 
+.tabs .tabs-list button:focus-visible {
+  outline: var(--spectrum-focus-indicator-thickness) solid var(--spectrum-focus-indicator-color);
+  outline-offset: var(--spectrum-focus-indicator-gap);
+  border-radius: var(--spectrum-corner-radius-small);
+}
+
+/* Selected Tab - Spectrum accent indicator */
+.tabs .tabs-list button[aria-selected='true'] {
+  border-bottom-color: var(--spectrum-accent-color-700);
+  background-color: transparent;
+  color: var(--spectrum-accent-color-700);
+  cursor: default;
+}
+
+/* Tab Panel - Spectrum content area */
 .tabs .tabs-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
+  padding: var(--spectrum-spacing-size-400);
+  background-color: var(--spectrum-neutral-background-color-default);
+  border-radius: var(--spectrum-corner-radius-medium);
+  border: 1px solid var(--spectrum-border-color-default);
   overflow: auto;
+  animation: fadeIn var(--spectrum-animation-duration-200) var(--spectrum-animation-ease-out);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
+}
+
+.tabs .tabs-panel h2,
+.tabs .tabs-panel h3,
+.tabs .tabs-panel h4 {
+  margin-top: 0;
+  color: var(--spectrum-neutral-content-color-default);
+  font-weight: var(--spectrum-font-weight-bold);
+}
+
+.tabs .tabs-panel p {
+  color: var(--spectrum-neutral-content-color-default);
+  line-height: var(--spectrum-line-height-body);
+}
+
+/* Responsive adjustments */
+@media (width >= 600px) {
+  .tabs .tabs-list {
+    font-size: var(--spectrum-body-size-m);
+  }
+
+  .tabs .tabs-list button {
+    padding: var(--spectrum-spacing-size-200) var(--spectrum-spacing-size-400);
+  }
+}
+
+@media (width >= 900px) {
+  .tabs .tabs-list {
+    font-size: var(--spectrum-body-size-l);
+  }
+
+  .tabs .tabs-panel {
+    padding: var(--spectrum-spacing-size-500);
+  }
+}
+
+/* Vertical tabs variant */
+.tabs.tabs-vertical {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--spectrum-spacing-size-400);
+}
+
+.tabs.tabs-vertical .tabs-list {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 2px solid var(--spectrum-gray-300);
+  overflow-x: visible;
+  overflow-y: auto;
+  margin-bottom: 0;
+  margin-right: -2px;
+}
+
+.tabs.tabs-vertical .tabs-list button {
+  text-align: left;
+  border-bottom: none;
+  border-right: 3px solid transparent;
+}
+
+.tabs.tabs-vertical .tabs-list button[aria-selected='true'] {
+  border-right-color: var(--spectrum-accent-color-700);
+  border-bottom-color: transparent;
 }
