@@ -72,6 +72,39 @@ function buildAutoBlocks(main) {
 }
 
 /**
+ * Moves instrumentation attributes from one element to another.
+ * This is used by blocks to preserve tracking and analytics data.
+ * @param {Element} from The source element
+ * @param {Element} to The target element
+ */
+export function moveInstrumentation(from, to) {
+  if (!from || !to) return;
+
+  // Move data attributes used for instrumentation/analytics
+  const instrumentationAttrs = [
+    'data-block-name',
+    'data-block-status',
+    'data-section-status',
+  ];
+
+  instrumentationAttrs.forEach((attr) => {
+    const value = from.getAttribute(attr);
+    if (value) {
+      to.setAttribute(attr, value);
+      from.removeAttribute(attr);
+    }
+  });
+
+  // Move any other data-* attributes that might be used for tracking
+  Array.from(from.attributes).forEach((attr) => {
+    if (attr.name.startsWith('data-') && !instrumentationAttrs.includes(attr.name)) {
+      to.setAttribute(attr.name, attr.value);
+      from.removeAttribute(attr.name);
+    }
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
